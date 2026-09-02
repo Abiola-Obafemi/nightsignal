@@ -1,0 +1,11 @@
+﻿node_modules/
+dist/
+build/
+coverage/
+zig-out/
+.zig-cache/
+.env
+.env.*
+*.log
+TASKS/*.done
+
