@@ -7,4 +7,3 @@
 - Never create filler edits or filler commits.
 - Never weaken tests just to pass.
 - Never expose secrets or create paid resources.
-

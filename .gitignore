@@ -9,3 +9,17 @@ zig-out/
 *.log
 TASKS/*.done
 
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Vite
+*.local
+dist-ssr/

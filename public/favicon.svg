@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" role="img" aria-label="NightSignal">
+  <rect width="32" height="32" rx="8" fill="#070A12"/>
+  <rect x="0.5" y="0.5" width="31" height="31" rx="7.5" stroke="#1E2A4A"/>
+  <circle cx="16" cy="16" r="3.5" fill="#5CE6FF"/>
+  <circle cx="16" cy="16" r="7" stroke="#5CE6FF" stroke-opacity="0.35" stroke-width="1.2"/>
+  <circle cx="16" cy="16" r="11" stroke="#7C5CFF" stroke-opacity="0.22" stroke-width="1"/>
+  <circle cx="16" cy="16" r="3.5" fill="#5CE6FF" style="filter: drop-shadow(0 0 8px rgba(92,230,255,0.9))"/>
+</svg>

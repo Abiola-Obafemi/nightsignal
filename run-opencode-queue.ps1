@@ -12,9 +12,10 @@ public static class AboAwake {
     public static extern uint SetThreadExecutionState(uint esFlags);
 }
 "@
-$ES_CONTINUOUS = 0x80000000
-$ES_SYSTEM_REQUIRED = 0x00000001
-$null = [AboAwake]::SetThreadExecutionState($ES_CONTINUOUS -bor $ES_SYSTEM_REQUIRED)
+[UInt32]$ES_CONTINUOUS = 0x80000000L
+[UInt32]$ES_SYSTEM_REQUIRED = 0x00000001L
+[UInt32]$KeepAwakeFlags = [UInt32]([UInt64]$ES_CONTINUOUS -bor [UInt64]$ES_SYSTEM_REQUIRED)
+$null = [AboAwake]::SetThreadExecutionState($KeepAwakeFlags)
 
 try {
     $Models = @(
@@ -48,7 +49,12 @@ try {
                 "Complete ONLY this real engineering milestone:`n`n" +
                 $Milestone +
                 "`n`nRules:`n" +
-                "- Inspect current code first.`n" +
+                "- WINDOWS EXECUTION RULES: this machine uses Windows PowerShell, not Bash.`n" +
+"- Do not use Unix-only commands such as head, tail, grep, sed, awk, rm, cp, mv, or background '&'.`n" +
+"- Use PowerShell equivalents such as Get-Content, Select-Object, Select-String, Remove-Item, Copy-Item, and Move-Item.`n" +
+"- Never launch an unbounded dev server or watch process from the agent. Use build/test commands for normal verification; leave server smoke tests to the deterministic runner.`n" +
+"- If a shell command fails because of platform syntax, correct it once with a Windows-safe equivalent rather than retrying variants.`n" +
+"- Inspect current code first.`n" +
                 "- Implement the milestone completely.`n" +
                 "- Run appropriate tests/builds.`n" +
                 "- Inspect actual output where relevant.`n" +
@@ -90,4 +96,5 @@ finally {
     $null = [AboAwake]::SetThreadExecutionState($ES_CONTINUOUS)
     Write-Host "Runner finished; normal Windows sleep behavior restored."
 }
+
 
